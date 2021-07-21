@@ -10,7 +10,7 @@ test("Can set office number using constructor", () => {
 })
 
 //test to see if getRole() returns "Manager"
-test("getRole() should return \"Intern\"", () => {
+test("getRole() should return \"Manager\"", () => {
     const testValue = "Manager";
     const e = new Manager("Foo", 1, "test@test.com", "officeNumber");
     expect(e.getRole()).toBe(testValue);

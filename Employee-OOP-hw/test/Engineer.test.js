@@ -1,4 +1,5 @@
 //require Engineer
+const Engineer = require("../lib/Engineer");
 
 //create test on manager class
 

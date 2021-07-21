@@ -1,6 +1,7 @@
 //require Employee
-const Intern = require("../lib/Intern");
+const Employee = require("../lib/Employee");
 // create test for employee 
+test('creates Employee object containing "name, id, email')
 
 // test to see if type of new employee is an object
 
