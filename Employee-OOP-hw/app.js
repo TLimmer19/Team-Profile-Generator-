@@ -25,3 +25,45 @@ const render = require("./src/page-template.js");
 //     //write html to output/team.html using function exported from page-template.js
 //     fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
 // }
+
+const inquirer = require("inquirer");
+const fs = require("fs");
+const Manager = require("./lib/Manager")
+const Intern = require("./lib/Intern")
+const Engineer = require("./lib/Engineer")
+
+const arrEmp = [];
+
+function start() {
+    inquirer.prompt([{
+        message: "What's the manager's name",
+        name: "mgrName"
+    }]).then(response => {
+        console.log(response)
+        const newMgr = new Intern(response.mgrName)
+
+        console.log(newMgr.getRole())
+        arrEmp.push(newMgr)
+        menu()
+    })
+}
+
+function menu() {
+    inquirer.prompt([{
+        message: "Add more?",
+        name: "choice",
+        type: "list",
+        choices: ["Engineer", "Intern", "Done"]
+    }]).then(response => {
+        if (response.choice == "Engineer") {
+            // askEngineer()
+            console.log("engineer")
+        } else if (response.choice == "Intern") {
+            console.log("Intern")
+        } else {
+            fs.writeFileSync("index.html", "a string of information")
+        }
+    })
+}
+
+start()
